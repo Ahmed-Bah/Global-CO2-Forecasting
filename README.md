@@ -18,7 +18,7 @@ I chose it because it has a strong trend and a regular yearly cycle, which expos
 
 ## Result
 
-I compared six models (seasonal-naive floor, naive, random walk with drift, AutoTheta, AutoETS, AutoARIMA) with rolling-origin cross-validation. AutoARIMA has the lowest MASE and CRPS over eight rolling 12-month windows (MASE 0.16 vs 1.37 for the floor), with AutoETS close behind (0.17). Full write-up in [report.md](report.md).
+I compared five models (seasonal-naive floor, naive, random walk with drift, AutoETS, AutoARIMA) with rolling-origin cross-validation. AutoARIMA has the lowest MASE and CRPS over eight rolling 12-month windows (MASE 0.16 vs 1.37 for the floor), with AutoETS close behind (0.17). Full write-up in [report.md](report.md).
 
 ## Files
 

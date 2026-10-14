@@ -10,7 +10,6 @@ The data is monthly global CO2 from NOAA GML: 568 months, March 1979 to June 202
 |---|---|---|---|---|
 | AutoARIMA | 0.16 | 0.0004 | 0.92 | 1.21 |
 | AutoETS | 0.17 | 0.0005 | 0.75 | 0.89 |
-| AutoTheta | 0.32 | 0.0010 | 0.46 | 0.93 |
 | Random walk with drift | 0.92 | 0.0030 | 0.70 | 5.78 |
 | Naive | 0.97 | 0.0027 | 0.75 | 5.82 |
 | Seasonal naive (floor) | 1.37 | 0.0033 | 0.60 | 5.04 |
