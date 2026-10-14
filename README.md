@@ -1,43 +1,21 @@
-# international-airpassengers-project
+Submitted by: Ahmad Bahwerith - academy: @SDAIAAcademy
 
-Submitted by: <your name> — academy: @SDAIAAcademy
+# Global CO2 Forecasting
 
-Capstone for the SDAIA Time Series course: the full pipeline — exploration,
-decomposition, benchmark floor, model through the framework (AutoGluon),
-cross-validation, report — on the Box & Jenkins AirPassengers series
-(1949-1960).
+Capstone for the SDAIA time series course. The series is global monthly atmospheric CO2 from NOAA GML, 568 months from March 1979 to June 2026. I used it instead of the AirPassengers default because the brief allows a different series.
 
-This repo is a **starter**, not a requirement. If you already know the
-pipeline, you may run it on your own series, or with a different framework
-or method — see "Your own data or method" in `brief.md`.
+## Question
 
-## Start
+Which model should we ship to forecast CO2 12 months ahead, and how far can we trust its intervals?
 
-1. Fork this repo.
-2. Open `project.ipynb` in Colab and run cell 1 — it installs everything
-   (the project's `coursekit`; AutoGluon is installed later, in the
-   notebook, when section 3 is reached).
-3. Read `brief.md`, do the work in the notebook, write the report as
-   `report.md`, **commit** and **push** to your fork, and submit the fork's
-   URL.
+## Result
 
-## Submission
-
-**Fork → solve → commit → push** — the notebook and the report must live
-on GitHub, not just in a runtime.
-
-At the top of your fork's `README.md`, replace `<your name>` in the line
-
-    Submitted by: <your name> — academy: @SDAIAAcademy
-
-with your name, so the submission is credited to you and tags the academy
-account.
-
-Deadline: **10:00 AM (Riyadh time), Thursday 15 October 2026**.
+AutoETS beats the seasonal-naive floor on every metric over eight rolling 12-month windows (MASE 0.17 vs 1.37). Full write-up in [report.md](report.md).
 
 ## Files
 
-- `project.ipynb` — the starter notebook; the graded deliverable
-- `brief.md` — the project brief
-- `rubric.md` — how it is graded (100 + extra credit)
-- `coursekit/` — shared plotting + scoring helpers (the course's harness)
+- `project.ipynb` is the notebook: data, exploration, floor, AutoGluon, harness.
+- `report.md` is the report for a non-technical reader.
+- `data/co2_global_monthly.csv` is the frozen data (`date`, `co2_ppm`).
+- `coursekit/` holds the course helper code for plotting and scoring.
+- `brief.md` and `rubric.md` are the assignment.
