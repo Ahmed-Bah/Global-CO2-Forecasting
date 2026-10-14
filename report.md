@@ -18,6 +18,8 @@ The gap holds in every window. AutoETS's worst window (MASE 0.44) beats the floo
 
 The 80% band for AutoETS averages 0.89 ppm wide, narrow next to the 5 ppm yearly swing.
 
+![AutoETS 24-month forecast with 80% and 95% bands](figures/02_forecast.png)
+
 It is slightly overconfident, though. An 80% band should contain the truth 80% of the time and this one does so 75% of the time. That is still the best of the three (the floor covers 60%, drift 70%). For planning, treat the band as a little tighter than advertised. With only 96 forecast points, the gap is small and imprecisely estimated.
 
 ## What the model missed
