@@ -4,6 +4,21 @@ Total 100, plus extra credit. The sections are the course spine, made
 checkable. Grade the work that is there; a defensible wrong answer scores
 higher than an undefendable right one.
 
+**This batch:** Ljung-Box was not covered, so it is not graded. The residual
+check in B is done by eye — residual plot plus ACF, both taught. A student
+who runs Ljung-Box anyway is not penalised and earns no extra points for it.
+
+**Your own data or method.** The air-passengers notebook is a starter, not a
+requirement. A project on a different series, or with a different framework
+or model family, is graded against the same sections: each criterion is
+read as its equivalent on that project (the floor is the naive that fits
+that series' frequency and seasonality; "the framework" is whatever library
+fitted the model; the harness keeps rolling origins, h and step chosen to
+suit the series). What does not change: a benchmark floor,
+rolling-origin cross-validation, intervals with coverage, no leakage, and
+the report. Evaluate the project as it is — its data, its method, and how
+well the work holds up — not against the starter.
+
 ## A — Exploration and shape (20)
 
 | point | criterion |
@@ -18,7 +33,7 @@ higher than an undefendable right one.
 | point | criterion |
 |---|---|
 | 8 | Fits the seasonal naive (the floor) and at least one other benchmark |
-| 7 | Ljung-Box on the floor's residuals (`y_t - y_{t-12}`), with a sentence on what structure is left on the table and which kind of model eats it |
+| 7 | Plots the floor's residuals (`y_t - y_{t-12}`) and their ACF; reads what structure is left on the table (trend? autocorrelation at low lags? at 12?) and which kind of model eats it |
 | 5 | Gives the floor an honest interval and reads its 80% coverage against the nominal 80% |
 
 ## C — The framework (15)
@@ -58,6 +73,14 @@ higher than an undefendable right one.
   internally (−5)
 - Leakage of any kind: a feature, a fit, or a denominator touching data the
   fold was not allowed to see (−15, and flag it to the student)
+
+## Submission requirements (not points, but checked)
+
+- Submitted as a fork, committed and pushed; the notebook runs as pushed.
+- The top of the fork's `README.md` carries the line
+  `Submitted by: <your name> — academy: @SDAIAAcademy`, with the name filled
+  in.
+- Deadline: **10:00 AM (Riyadh time), Thursday 15 October 2026**.
 
 ## Extra credit (10 points)
 

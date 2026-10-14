@@ -14,6 +14,26 @@ benchmark floor, check what the floor leaves on the table, fit a model
 through the framework, cross-validate, and read the result against the
 floor.
 
+## Your own data or method
+
+This series and this notebook are a starter for anyone who wants a worked
+path. They are not the only path. You may:
+
+- **use a different series** — any regularly spaced series with enough
+  history for rolling-origin cross-validation (at least a few seasonal
+  cycles), from a public source or your own work, cached in the repo or
+  fetched by the notebook;
+- **use a different framework or model** — statsforecast, Darts, Prophet,
+  sktime, a hand-built model, or another AutoML library in place of
+  AutoGluon.
+
+The pipeline and the rules below do not change: explore it, set a benchmark
+floor (the naive that fits your series' frequency and seasonality),
+cross-validate over rolling origins (choose `h`, step and the number of
+windows to suit your series), score the point *and* the interval, and
+write the report. Your project is evaluated on its own terms: the rubric is
+read against its equivalent on your project.
+
 ## Deliverables
 
 1. **The notebook**, built on `project.ipynb`, in order: exploration,
@@ -26,7 +46,9 @@ floor.
      the one number that earns it.
    - **The intervals.** How wide, what they covered, and whether the band is
      honest.
-   - **The residuals.** What your model missed, and what that means.
+   - **The residuals.** What your model missed, and what that means (read
+     from the residual plot and its ACF — Ljung-Box is not required this
+     batch).
    - **One change.** A specific next step — data, driver, frequency, or
      horizon — and what you expect it to do.
 
@@ -53,12 +75,14 @@ wins.
 ## Submission
 
 1. **Fork** this repo on GitHub (Fork → create it under your own account).
-2. **Solve** it in your fork: fill in the TODO cells in `project.ipynb` and
-   write the report as `report.md`.
+2. **Solve** it in your fork: fill in the TODO cells in `project.ipynb` (or
+   your own notebook, if you changed the data or method) and write the
+   report as `report.md`. At the top of `README.md`, fill in the line
+   `Submitted by: <your name> — academy: @SDAIAAcademy` with your name.
 3. **Commit** your work to your fork.
 4. **Push**, so the notebook and the report live on GitHub — not just in a
    runtime.
 5. Submit **your fork's URL**. The notebook is graded as it runs, in the
    state you pushed.
 
-Deadline: **00:00, Tuesday 8 September 2026**.
+Deadline: **10:00 AM (Riyadh time), Thursday 15 October 2026**.
