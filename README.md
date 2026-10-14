@@ -2,20 +2,32 @@ Submitted by: Ahmad Bahwerith - academy: @SDAIAAcademy
 
 # Global CO2 Forecasting
 
-Capstone for the SDAIA time series course. The series is global monthly atmospheric CO2 from NOAA GML, 568 months from March 1979 to June 2026. I used it instead of the AirPassengers default because the brief allows a different series.
+Capstone for the SDAIA time series course. I forecast global monthly atmospheric CO2 instead of the AirPassengers default, since the brief allows a different series.
 
 ## Question
 
-Which model should we ship to forecast CO2 12 months ahead, and how far can we trust its intervals?
+Which model should be shipped to forecast CO2 12 months ahead, and how far can its intervals be trusted?
+
+## Dataset
+
+Global monthly mean CO2 from NOAA GML (`co2_ppm`), 568 observations from March 1979 to June 2026, no gaps, frozen in `data/co2_global_monthly.csv` (`date`, `co2_ppm`). The latest months are provisional and get revised.
+
+I chose it because it has a strong trend and a regular yearly cycle, which exposes the seasonal-naive floor: it repeats last year's season and misses the trend.
+
+![Global atmospheric CO2, 1979-2026](figures/01_series.png)
 
 ## Result
 
-AutoETS beats the seasonal-naive floor on every metric over eight rolling 12-month windows (MASE 0.17 vs 1.37). Full write-up in [report.md](report.md).
+I compared AutoETS with a seasonal-naive floor and a random walk with drift, using rolling-origin cross-validation. AutoETS wins on every metric over eight rolling 12-month windows (MASE 0.17 vs 1.37). Full write-up in [report.md](report.md).
 
 ## Files
 
 - `project.ipynb` is the notebook: data, exploration, floor, AutoGluon, harness.
 - `report.md` is the report for a non-technical reader.
-- `data/co2_global_monthly.csv` is the frozen data (`date`, `co2_ppm`).
+- `data/co2_global_monthly.csv` is the frozen data.
 - `coursekit/` holds the course helper code for plotting and scoring.
 - `brief.md` and `rubric.md` are the assignment.
+
+## How to run
+
+Open `project.ipynb` in Google Colab from GitHub (File → Open notebook → GitHub), then Runtime → Run all. The first cell clones the repo and installs the course package; the AutoGluon cell installs `autogluon.timeseries`.
